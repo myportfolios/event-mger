@@ -7,6 +7,9 @@ const router = require('../server/routes/routes');
 //create instance
 const app = express();
 
+//connect the app to database when the app  starts
+require("./database/mongoose");
+
 //use router
 app.use(router);
 app.use(express.json());

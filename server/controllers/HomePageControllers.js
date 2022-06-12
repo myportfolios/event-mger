@@ -1,3 +1,4 @@
+const axios = require('axios');
 // exports.getUserSessionController = (req, res, next) => {
 // const 
 // }
@@ -6,6 +7,10 @@
  */
 exports.loginController = (req, res) => {
     // get username, email, and pasword from req body
-    const {username, email, password} = req?.body;
+    console.log('body', req)
+    // const {username, password} = req?.body;
+    // if(!username && !password){
+    //     res.send("Invalid Request").status(400)
+    // }
 
 }
