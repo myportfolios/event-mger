@@ -4,11 +4,11 @@ const mongoose = require('mongoose');
 const loginSchema = new mongoose.Schema({
     username:{
         type: String,
-        required
+        required:true
     },
     password:{
         type:String,
-        required
+        required:true
     }
 })
 const Login = mongoose.model("Login", loginSchema);

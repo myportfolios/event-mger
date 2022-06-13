@@ -15,7 +15,7 @@ const bodyParser = require('body-parser')
 const jsonParser = bodyParser.json();
 
 //create urlencoder parser for urlencoder request from forms such as login/register
-const urlencoderParser = bodyParser.urlencoded();
+const urlencoderParser = bodyParser.urlencoded({ extended: true });
 
 //connect the app to database when the app  starts
 require("./database/mongoose");
