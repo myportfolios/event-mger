@@ -1,17 +1,34 @@
-const axios = require('axios');
-// exports.getUserSessionController = (req, res, next) => {
-// const 
-// }
+const { body, validationResult } = require("express-validator");
+
+//import DB model
+const Login = require("../model/login");
+const User = require("../model/user");
 /**
  * get user from db
  */
-exports.loginController = (req, res) => {
-    // get username, email, and pasword from req body
-    console.log('body', req?.body)
-    return
-    // const {username, password} = req?.body;
-    // if(!username && !password){
-    //     res.send("Invalid Request").status(400)
-    // }
-
-}
+exports.loginController = async (req, res) => {
+  try {
+    //destructure username & password from req body
+    const { username, password } = req?.body;
+    const login = new Login({ username, password });
+    //save to db
+    login.save();
+    //sned status for success
+    res.status(201).send("Login successful");
+    return;
+  } catch {
+    res.status(400).send();
+  }
+};
+exports.registerController = async ( req, res) => {
+    try {
+      const {username, password, email} = req?.body;
+      const user = new User({username, password, email});
+      // //save to db
+      await user.save();
+      // //send status and msg
+      res.status(201).send("User created successfully")
+    } catch {
+      res.status(500).send("Registration failed!")
+    }
+  };
