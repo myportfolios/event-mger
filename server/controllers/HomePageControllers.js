@@ -1,4 +1,5 @@
-const { body, validationResult } = require("express-validator");
+const {getHashedPassword} = require('../utils/index');
+
 
 //import DB model
 const Login = require("../model/login");
@@ -23,7 +24,9 @@ exports.loginController = async (req, res) => {
 exports.registerController = async ( req, res) => {
     try {
       const {username, password, email} = req?.body;
-      const user = new User({username, password, email});
+      //hash password
+      const hashedPassword = await getHashedPassword(password)
+      const user = new User({username,email, password:hashedPassword});
       // //save to db
       await user.save();
       // //send status and msg
