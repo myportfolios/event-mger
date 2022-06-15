@@ -1,5 +1,7 @@
 const { getHashedPassword } = require("../utils/index");
 const bcrypt = require("bcrypt");
+const jwt = require("jsonwebtoken");
+const keys = require("../config/keys");
 
 //import DB model
 const Login = require("../model/login");
@@ -11,20 +13,33 @@ exports.loginController = async (req, res) => {
   try {
     //destructure username & password from req body
     const { username, password } = req?.body;
-    //hash password
-    const hashedPassword = bcrypt;
     //get user from DB with the username from req
     const user = await User.findOne({ username });
     if (!user) return res.status(404).send("Uuser not found");
 
     //if user exist, compare password
     const isValidUser = await bcrypt.compare(password, user?.password);
-    console.log("isValidUser", isValidUser);
     //if user is valid, generate token and return user details with token
-
-    return;
+    //create jwt payload
+    const jwtPayload = {
+      id: user?._id,
+      username: user?.username,
+      email: user?.email,
+      // exp: Math.floor(Date.now() / 1000) + 60 * 60, // token is valid for an hour
+    };
+    //create token
+    const token =
+      isValidUser &&
+      jwt.sign(jwtPayload, keys.SECRET, {
+        expiresIn: "1h",
+        // exp: Math.floor(Date.now() / 1000) + 60 * 60, or
+      });
+    //send back user object with token
+    return res
+      .status(200)
+      .send({ username: user?.username, token: `Bearer ${token}` });
   } catch {
-    res.status(400).send();
+    res.status(401).send();
   }
 };
 exports.registerController = async (req, res) => {
