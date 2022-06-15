@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 
-const { body, validationResult } = require("express-validator");
+const { body } = require("express-validator");
 
 //import login middleware
 const ValidationMiddleware = require("../middlewares/ValidationMiddleware");
@@ -22,6 +22,12 @@ router.post(
   ValidationMiddleware,
   registerController
 );
-router.post("/login", ValidationMiddleware, loginController);
+router.post(
+  "/login",
+  body("username").isAlphanumeric(),
+  body("password").isLength({ min: 5 }).isAscii(),
+  ValidationMiddleware,
+  loginController
+);
 //export router and use middleware in app
 module.exports = router;

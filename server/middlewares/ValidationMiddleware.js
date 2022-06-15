@@ -7,9 +7,6 @@ const { body, validationResult } = require("express-validator");
  * @param {fn to move  to the next middleware} next
  */
 const ValidationMiddleware = async (req, res, next) => {
-  const isLogin = req?.method === "GET";
-  const isRegister = req?.method === "POST";
-
   //find validation errors
   const errors = await validationResult(req);
   if (!errors.isEmpty()) {
@@ -18,6 +15,6 @@ const ValidationMiddleware = async (req, res, next) => {
     return res.status(400).json({ errors: errors.array() });
   }
   //call the next middleware if error doesn't exist
-  next()
+  next();
 };
 module.exports = ValidationMiddleware;
