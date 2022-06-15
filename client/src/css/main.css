@@ -11,9 +11,27 @@ html {
 body {
   box-sizing: border-box; }
 
-/*header*/
+.label {
+  padding: 1rem 2.5rem; }
+
+.label-xs {
+  font-size: 1.2rem; }
+
+.label-sm {
+  font-size: 1.4rem; }
+
+.label-md {
+  font-size: 1.6rem; }
+
+.label-lg {
+  font-size: 1.8rem; }
+
+.label-xl {
+  font-size: 20rem; }
+
 .App {
-  text-align: center; }
+  text-align: center;
+  color: red; }
 
 .App-logo {
   height: 40vmin;
@@ -41,3 +59,5 @@ body {
     transform: rotate(0deg); }
   to {
     transform: rotate(360deg); } }
+
+/*header*/
