@@ -15,7 +15,7 @@ exports.loginController = async (req, res) => {
     const { username, password } = req?.body;
     //get user from DB with the username from req
     const user = await User.findOne({ username });
-    if (!user) return res.status(404).send("Uuser not found");
+    if (!user) return res.status(404).send("User not found");
 
     //if user exist, compare password
     const isValidUser = await bcrypt.compare(password, user?.password);
