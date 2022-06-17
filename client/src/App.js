@@ -7,7 +7,7 @@ function App() {
     <div className="App">
       <h1>Client works</h1>
       {/* <Label title="Home" size="xl" /> */}
-      <Button title="Primary" />
+      <Button title="Primary" color="red" size="1.6rem" />
     </div>
   );
 }

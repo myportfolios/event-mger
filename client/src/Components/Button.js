@@ -1,4 +1,5 @@
 import React from "react";
+import StyledButton from "./StyledButton";
 /**
  * @params
  * title - String
@@ -9,18 +10,11 @@ import React from "react";
  * @returns Button component
  */
 
-const Button = ({
-  title = "",
-  color = "white",
-  bgColor = "blue",
-  size = "md",
-  onClick = () => {},
-  ...props
-}) => {
+const Button = ({ title = "", onClick = () => {}, ...btnProps }) => {
   return (
-    <button className={`btn btn-${size}`} {...props} onClick={() => onClick()}>
+    <StyledButton {...btnProps} onClick={() => onClick()}>
       {title}
-    </button>
+    </StyledButton>
   );
 };
 export default Button;
