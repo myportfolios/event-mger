@@ -7,6 +7,8 @@ const StyledButton = styled.button`
   font-size: ${({ size }) => size};
   padding: 1rem 2rem;
   border-radius: 1rem;
+  width: ${({ width }) => width};
+  margin: 1.5rem 2rem;
 `;
 
 export default StyledButton;

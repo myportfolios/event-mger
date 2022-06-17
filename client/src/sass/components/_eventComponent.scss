@@ -1,0 +1,25 @@
+.event-box {
+  position: absolute;
+  width: 50rem;
+  height: auto;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  border: 1px solid #eee;
+  padding: 3rem;
+  box-shadow: 0 5px 10px #eee;
+  &__title {
+    font-size: 3rem;
+    &--create {
+      border-style: solid;
+      border-color: #fff;
+      border-width: 5px;
+    }
+    &--manage {
+      border-style: solid;
+      border-color: #ff7a44;
+      border-width: 5px;
+    }
+  }
+}

@@ -10,7 +10,11 @@ import StyledButton from "./StyledButton";
  * @returns Button component
  */
 
-const Button = ({ title = "", onClick = () => {}, ...btnProps }) => {
+const Button = ({
+  title = "Add Title Props",
+  onClick = () => {},
+  ...btnProps
+}) => {
   return (
     <StyledButton {...btnProps} onClick={() => onClick()}>
       {title}
