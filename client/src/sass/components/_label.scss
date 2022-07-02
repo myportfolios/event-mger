@@ -3,18 +3,18 @@
 .label {
   padding: 1rem 2.5rem;
 }
-.label-xs {
+.label__xs {
   @include fontSize(1.2 * 1rem);
 }
-.label-sm {
+.label__sm {
   @include fontSize(1.4 * 1rem);
 }
-.label-md {
+.label__md {
   @include fontSize(1.6 * 1rem);
 }
-.label-lg {
+.label__lg {
   @include fontSize(1.8 * 1rem);
 }
-.label-xl {
+.label__xl {
   @include fontSize(20 * 1rem);
 }

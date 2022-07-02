@@ -1,0 +1,24 @@
+{
+  "primary": {
+    "green": "#2ecc71",
+    "asphalt": "#34495e",
+    "turquise": "#1abc9c",
+    "carrot": "#e67e22",
+    "concrete": "#95a5a6"
+  },
+  "secondary": {
+    "green": "#47d583",
+    "asphalt": "#405a74",
+    "turquise": "#1edab5",
+    "carrot": "#e99041",
+    "concrete": "#a7b5b6"
+  },
+  "tertiary": {
+    "green": "#63db96",
+    "asphalt": "#4c6b8a",
+    "turquise": "#37e3c1",
+    "carrot": "#eda25f",
+    "concrete": "#a7b5b6"
+  },
+  "white": "#fff"
+}

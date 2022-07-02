@@ -14,19 +14,19 @@ body {
 .label {
   padding: 1rem 2.5rem; }
 
-.label-xs {
+.label__xs {
   font-size: 1.2rem; }
 
-.label-sm {
+.label__sm {
   font-size: 1.4rem; }
 
-.label-md {
+.label__md {
   font-size: 1.6rem; }
 
-.label-lg {
+.label__lg {
   font-size: 1.8rem; }
 
-.label-xl {
+.label__xl {
   font-size: 20rem; }
 
 .App {
@@ -82,4 +82,20 @@ body {
       border-color: #ff7a44;
       border-width: 5px; }
 
-/*header*/
+.btn {
+  padding: 1rem 3.5rem;
+  text-align: center;
+  border-radius: 9rem;
+  border: 10px solid #eee; }
+
+.btn__large {
+  width: 25rem;
+  padding: 2rem 0; }
+
+.btn__medium {
+  width: 22rem;
+  padding: 1.5rem 0; }
+
+.btn__small {
+  width: 18rem;
+  padding: 1.5rem 0; }
